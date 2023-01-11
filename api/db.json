@@ -1,0 +1,33 @@
+{
+  "users": [
+    {
+      "email": "yusufmkapukaya@gmail.com",
+      "username": "yusuf",
+      "password": "12345678",
+      "id": 1
+    }
+  ],
+  "questions": [
+    {
+      "username": "yusuf",
+      "question": "TestSoru",
+      "solutions": [
+        {
+          "username": "yusuf",
+          "solution": "asasasd",
+          "plus": [
+            1
+          ],
+          "minus": []
+        }
+      ],
+      "id": 1
+    },
+    {
+      "username": "yusuf",
+      "question": "deneme1",
+      "solutions": [],
+      "id": 2
+    }
+  ]
+}

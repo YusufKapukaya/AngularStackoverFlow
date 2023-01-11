@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="form-container">
+        <div class="title">Hesap Olustur</div>
+        <form [formGroup]="creatUserForm">
+            <mat-form-field appearance="outline">
+                <mat-label>Email Adreese</mat-label>
+                <input matInput formControlName="email" />
+                <mat-error>
+                    <p *ngIf="f['email'].errors && f['email'].errors['required']">Email Zorunludur</p>
+                    <p *ngIf="f['email'].errors && f['email'].errors['email']">Email formati hatali</p>
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Kullanici Adinizi Giriniz</mat-label>
+                <input matInput formControlName="username"/>
+                <mat-error>
+                    <p *ngIf="f['username'].errors && f['username'].errors['required']">Kullanici Adi Zorunludur</p>
+                    <p *ngIf="f['username'].errors && f['username'].errors['maxlength']">Max 10 karakter Giriniz</p>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Şifrenizi Giriniz</mat-label>
+                <input type="password" matInput formControlName="password"/>
+                <mat-error>
+                    <p *ngIf="f['password'].errors && f['password'].errors['required']">Sifre Zorunludur</p>
+                    <p *ngIf="f['password'].errors && f['password'].errors['minlength']">Sifre Minimum Sekiz harfden olusmali</p>
+                </mat-error>
+            </mat-form-field>
+        </form>
+        <div class="buttons-container">
+            <button [disabled]="creatUserForm.invalid" (click)="createAccount()" mat-raised-button class="login-button">
+                Kaydol
+            </button>
+            <p>Veya</p>
+            <button mat-button routerLink="/login">Giriş Yap</button>
+            <!-- {{creatUserForm.value | json}} -->
+        </div>
+    </div>
+</div>

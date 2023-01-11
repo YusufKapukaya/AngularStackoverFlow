@@ -1,0 +1,6 @@
+<mat-toolbar class="headercontainer" color="primary">
+    <div> Stackoverflow erstellen</div>
+    <div>
+        <button *ngIf="userService.user != undefined" mat-button (click)="logout()">ABMELDEN</button>
+    </div>
+</mat-toolbar>
